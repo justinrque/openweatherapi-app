@@ -3,6 +3,8 @@ This application uses the OpenWeather API.
 
 ## Guide
 You must use your own API Key to make the app work, you may need to register for your own public key.
+
+
 Paste your API key in the **Data.kt** located in **com.android.que.openweatherapi**
 
 ```bash
