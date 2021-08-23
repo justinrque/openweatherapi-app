@@ -1,7 +1,6 @@
 package com.android.que.openweatherapi.adapter
 
 import android.app.AlertDialog
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +26,7 @@ class WeatherAdapter(private val weatherData: MutableList<WeatherEntity>) :
 
         holder.itemView.setOnClickListener(View.OnClickListener {
             val database =
-                Room.databaseBuilder(it.context, DatabaseClass::class.java, "weather-database")
+                Room.databaseBuilder(it.context, DatabaseClass::class.java, "weather_database")
                     .allowMainThreadQueries().build()
 
             var builder = AlertDialog.Builder(it.context)
@@ -35,8 +34,8 @@ class WeatherAdapter(private val weatherData: MutableList<WeatherEntity>) :
             builder.setMessage("Delete this item?")
 
             builder.setPositiveButton("Yes") { dialog, id ->
-                database.weatherDao().delete(weatherData[holder.adapterPosition].uid)
-                weatherData.remove(weatherData[holder.adapterPosition])
+                database.weatherDao().delete(weatherData[position].uid)
+                weatherData.remove(weatherData[position])
                 notifyDataSetChanged()
                 dialog.dismiss()
             }
@@ -53,8 +52,7 @@ class WeatherAdapter(private val weatherData: MutableList<WeatherEntity>) :
     }
 
 
-    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-    }
+    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 
     override fun getItemCount(): Int {
         return weatherData.size
