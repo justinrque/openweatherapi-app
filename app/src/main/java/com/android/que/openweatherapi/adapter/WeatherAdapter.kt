@@ -1,6 +1,7 @@
 package com.android.que.openweatherapi.adapter
 
 import android.app.AlertDialog
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,9 +35,10 @@ class WeatherAdapter(private val weatherData: MutableList<WeatherEntity>) :
             builder.setMessage("Delete this item?")
 
             builder.setPositiveButton("Yes") { dialog, id ->
-                database.weatherDao().delete(weatherData[position])
+                database.weatherDao().delete(weatherData[holder.adapterPosition].uid)
                 weatherData.remove(weatherData[holder.adapterPosition])
                 notifyDataSetChanged()
+                dialog.dismiss()
             }
 
             builder.setNegativeButton("No") { dialog, id ->

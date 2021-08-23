@@ -16,6 +16,7 @@ class Data {
     }
 }
 ```
+
 **Voila! The app should now work.**
 
 -EOF-

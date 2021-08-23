@@ -33,7 +33,7 @@ class WeatherHistoryFragment : Fragment() {
             "weather_database"
         ).allowMainThreadQueries().build()
 
-        val weatherData = database.weatherDao().getWeatherData
+        val weatherData = database.weatherDao().getWeatherData()
         rv_weather_history.apply {
             layoutManager = LinearLayoutManager(this.context)
             adapter = WeatherAdapter(weatherData as MutableList<WeatherEntity>)

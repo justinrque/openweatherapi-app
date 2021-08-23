@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="25dp"
-    android:background="@drawable/bg_gradient">
+    android:background="@color/black">
 
     <LinearLayout
         android:id="@+id/root_layout"
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="#f8fdf8">
+        android:background="@color/black">
 
         <TextView
             android:id="@+id/textView"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="OpenWeatherAPI"
-            android:textColor="#FF5252"
+            android:textColor="@android:color/holo_blue_dark"
             android:textSize="36sp" />
 
         <LinearLayout
@@ -35,6 +35,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/rain" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Your Source for Reliable Weather Reports"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <TableRow
@@ -43,6 +52,8 @@
 
             <Button
                 android:id="@+id/btn_signin"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign In as Guest"
@@ -54,6 +65,8 @@
 
             <Button
                 android:id="@+id/btn_login"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"

@@ -66,12 +66,10 @@ class MainActivity : AppCompatActivity() {
         promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle("Biometric login")
             .setSubtitle("Log in using your biometric credential")
-            .setNegativeButtonText("Setup your biometric credential first")
+            .setNegativeButtonText("Cancel")
             .build()
 
         // Prompt appears when user clicks "Log in".
-        // Consider integrating with the keystore to unlock cryptographic operations,
-        // if needed by your app.
         val biometricLoginButton =
             findViewById<Button>(R.id.btn_login)
         biometricLoginButton.setOnClickListener {

@@ -8,12 +8,12 @@ import androidx.room.Query
 @Dao
 interface WeatherDao {
     @Insert
-    fun insertWeatherData(weatherEntity: WeatherEntity?)
+    fun insertWeatherData(weatherEntity: WeatherEntity)
 
-    @get:Query("SELECT * FROM weatherEntity")
-    val getWeatherData: List<WeatherEntity>?
+    @Query("SELECT * FROM weatherEntity")
+    fun getWeatherData(): List<WeatherEntity>
 
-    @Delete
-    fun delete(weatherEntity: WeatherEntity?)
+    @Query("DELETE FROM weatherEntity WHERE uid = :id")
+    fun delete(id: Int)
 }
 
